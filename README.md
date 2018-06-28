@@ -1,6 +1,6 @@
-_This package is a Stylus port of [nuxt-sass-resources-loader](https://github.com/anteriovieira/nuxt-sass-resources-loader)_
+_This package is a LESS port of [nuxt-sass-resources-loader](https://github.com/anteriovieira/nuxt-sass-resources-loader)_
 
-# nuxt-stylus-resources-loader
+# nuxt-less-resources-loader
 
 This module does all the hard work of configuring [sass-resources-loader](https://github.com/shakacode/sass-resources-loader) for your nuxt application.
 
@@ -9,9 +9,9 @@ This module does all the hard work of configuring [sass-resources-loader](https:
 ## Install
 
 ```sh
-npm i nuxt-stylus-resources-loader
+npm i nuxt-less-resources-loader
 # or
-yarn add nuxt-stylus-resources-loader
+yarn add nuxt-less-resources-loader
 ```
 
 ## Usage
@@ -23,23 +23,23 @@ import {resolve} from 'path'
 module.exports = {
   modules: [
     // provide path to the file with resources
-    ['nuxt-stylus-resources-loader', resolve(__dirname, 'path/to/resources.styl')],
+    ['nuxt-less-resources-loader', resolve(__dirname, 'path/to/resources.styl')],
 
     // or array of paths
-    ['nuxt-stylus-resources-loader', [
-        resolve(__dirname, 'path/to/first-resources.stylus'),
+    ['nuxt-less-resources-loader', [
+        resolve(__dirname, 'path/to/first-resources.less'),
         resolve(__dirname, 'path/to/second-resources.styl'),
     ]],
 
     // or the native options
-    ['nuxt-stylus-resources-loader', {
-        resources: resolve(__dirname, 'path/to/resources.stylus')
+    ['nuxt-less-resources-loader', {
+        resources: resolve(__dirname, 'path/to/resources.less')
     }],
   ],
 }
 ```
 
-or stylus resources option. require v1.1+
+or less resources option. require v1.1+
 
 ```js
 // nuxt.config.js
@@ -47,10 +47,10 @@ import {resolve} from 'path'
 
 module.exports = {
   modules: [
-    'nuxt-stylus-resources-loader'
+    'nuxt-less-resources-loader'
   ],
-  stylusResources: [
-    resolve(__dirname, 'path/to/first-resources.stylus')
+  lessResources: [
+    resolve(__dirname, 'path/to/first-resources.less')
   ]
 }
 ```
@@ -66,7 +66,7 @@ resources: './path/to/resources/**/*.styl', // will match all files in folder an
 resources: [ './path/to/resources/**/*.styl', './path/to/another/**/*.styl' ]
 ```
 
-> Note that stylus-resources-loader will resolve your files in order. If you want your variables to be accessed across all of your mixins you should specify them in first place.
+> Note that less-resources-loader will resolve your files in order. If you want your variables to be accessed across all of your mixins you should specify them in first place.
 
 ```js
 resources: [ './path/to/variables/vars.styl', './path/to/mixins/**/*.styl' ]
